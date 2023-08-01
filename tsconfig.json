@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types"],
+    "incremental": true,
+    "paths": {
+      "react-notion-x": ["components/react-notion-x"],
+      "notion-client/*": ["lib/notion-client"],
+      "notion-utils/*": ["lib/notion-utils"],
+      "@utils": ["lib/utils"]
+    },
+  },
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "site.config.ts"]
+}

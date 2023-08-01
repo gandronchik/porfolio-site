@@ -1,0 +1,370 @@
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vmin;
+
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(55, 53, 47);
+  caret-color: rgb(55, 53, 47);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.loadingIcon {
+  animation: spinner 0.6s linear infinite;
+  display: block;
+  width: 24px;
+  height: 24px;
+  color: rgba(55, 53, 47, 0.4);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorImage {
+  max-width: 100%;
+  width: 640px;
+}
+
+
+
+.copyright {
+  font-size: 80%;
+  padding: 0.5em;
+}
+
+.settings,
+.social {
+  user-select: none;
+}
+
+
+.settings a,
+.social a {
+  cursor: pointer;
+  font-size: 2em;
+  display: inline-flex;
+  padding: 0.25em;
+  margin-right: 1vw;
+  transition: color 250ms ease-out;
+  align-items: center;
+}
+
+.settings a:last-of-type,
+.social a:last-of-type {
+  margin-right: 0;
+
+}
+
+.settings a:hover,
+.social a:hover {
+  transition: color 50ms ease-out;
+}
+
+.toggleDarkMode:hover {
+  color: #2795e9;
+}
+
+.instagram:hover,
+.telegramChannel:hover,
+.telegramChat:hover {
+  color: #2795e9;
+
+}
+
+.comments {
+  width: 100%;
+  margin-top: 2em;
+  border-top: 1px solid var(--fg-color-0);
+}
+
+.socialtext {
+  font-size: 14px;
+  margin-right: 1em;
+}
+
+/* @media only screen and (max-width: 566px) {
+  .footer {
+    flex-direction: column;
+   
+  }
+
+  .footer > div {
+    margin-top: 1em;
+  }
+
+  .footer .settings {
+    order: 1;
+  }
+  .footer .social {
+    order: 2;
+  }
+  .footer .copyright {
+    order: 3;
+  }
+} */
+
+.pageActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 6px 12px 12px;
+}
+
+.pageActions a {
+  cursor: pointer;
+  font-size: 24px;
+  display: inline-flex;
+  padding: 12px;
+  margin-right: 1vw;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 250ms ease-out;
+}
+
+.pageActions a:last-of-type {
+  margin-right: 0;
+}
+
+.pageActions a:hover {
+  transition: all 50ms ease-out;
+}
+
+.likeTweet:hover {
+  background: #f6e3e8;
+  color: #e0265e;
+}
+
+.retweet:hover {
+  color: #19bf64;
+  background: #e5f2e8;
+}
+
+/* @media (max-width: 1360px) {
+  .githubCorner {
+    display: none;
+  }
+}
+
+.githubCorner:hover .octoArm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .githubCorner:hover .octoArm {
+    animation: none;
+  }
+
+  .githubCorner .octoArm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+} */
+
+.hidden {
+  visibility: hidden;
+}
+
+/* flexe boxes */
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+
+}
+
+.flexColumn {
+  display: flex;
+  /* width: 100%;
+  height: 100%; */
+  flex-direction: column;
+  position: relative;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background: var(--divider-color);
+}
+
+.footer {
+  width: 100%;
+  margin: auto auto 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--divider-color);
+  box-shadow: inset 0 1px 15px 0px rgb(0 0 0 / 10%);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color);
+  min-width: 320px;
+  padding-bottom: 10px;
+}
+
+.aboutSection {
+  margin-top: 2em;
+}
+
+.supportSection {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+ 
+.cryptoWallets {
+  max-width: 450px;
+}
+
+
+@media only screen and (max-width: 1020px) {
+
+  .footerRow2 {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  .mobileNav{
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .bookmarksHeader{
+    display: inline-flex !important;
+  }
+  .mobileNav svg:hover{
+    color: #2795e9;
+    
+  }
+
+  .settings {
+    display: none;
+  }
+
+  .copyright {
+    display: none;
+  }
+  .cryptoWallets {
+    flex-direction: column;
+  }
+
+  .supportSection {
+    margin-bottom: 7em;
+  }
+
+  .footer .settings {
+    order: 2;
+
+  }
+
+  .footer .social {
+    order: 1;
+
+  }
+
+  .footer .copyright {
+    order: 3;
+
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .mobileNav a{
+    margin-right: 1em !important;
+   }
+   .mobileNav a:last-of-type {
+    margin-right: 0 !important;
+  }
+   .socialtext {
+    font-size: 10px;
+  }
+}
+
+.logoWrapper {
+  position: relative;
+  left: 30px;
+
+
+}
+
+.dunia {
+  fill: var(--fg-color)
+}
+
+.logoText {
+  position: absolute;
+  top: 14px;
+  z-index: 100;
+  left: -39%;
+  font-weight: bolder;
+  font-size: 10px;
+  width: 76px;
+}
+
+ .bookmarksWrapper{
+   border: 1px solid gray;
+ }
+ .mobileNav {
+   display: none;
+   border-bottom: 1px solid gray;
+   padding-bottom: 0.5em;
+   /* padding-right: 1em;
+   padding-left: 1em; */
+ }
+
+ .mobileNav a{
+ margin-right: 2em;
+}
+.mobileNav a:last-of-type {
+  margin-right: 0;
+}
+.notion-to-do-body {
+  font-size: 14px;
+}
