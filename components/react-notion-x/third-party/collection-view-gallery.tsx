@@ -60,7 +60,7 @@ function Gallery({ blockIds, collectionView, collection }) {
     <div className='self-center'>
       <div className='relative'>
         <div
-          className='grid gap-6 md:gap-6vmin lg:grid-cols-3 min-h-300px'
+          className='grid gap-6 md:gap-6vmin lg:grid-cols-3'
 
         >
           {(blockIds && blockIds.length) ? blockIds.map((blockId) => {

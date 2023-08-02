@@ -46,7 +46,7 @@ export const Asset: React.FC<{
   }
 
   const assetStyle: React.CSSProperties = {}
-  // console.log('asset', block)
+  console.log('block.format', block.format)
 
   if (block.format) {
     const {
@@ -88,7 +88,7 @@ export const Asset: React.FC<{
       }
     } else {
       if (block_width) {
-        style.width = block_width
+        style.width = (block_width / 720) * 1100
       }
 
       if (block_preserve_scale && block.type !== 'image') {

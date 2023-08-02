@@ -56,7 +56,6 @@ export const Collection: React.FC<{
     if (block.parent_table !== 'collection') {
       return null
     }
-    console.log(block);
 
     return (
       <NotionContextProvider {...context}>
@@ -217,7 +216,7 @@ const CollectionViewBlock: React.FC<{
 
   return (
     <div className={cs('self-center w-full', className)}>
-      <div className='h-auto px-2 py-4'>
+      <div className='h-auto px-2 py-4 mb-8'>
         {viewIds.length > 1 && showCollectionViewDropdown && (
           <CollectionViewTab
             collectionView={collectionView}
@@ -254,9 +253,9 @@ const CollectionViewTab: React.FC<{
           key={viewId}
           onClick={() => onChangeView(viewId)}
           className={cs(
-            'cursor-pointer px-1 py-2 hover:text-fuchsia-600 hover:text-lg hover:font-bold hover:text-shadow shadow-fuchsia-900 ',
+            'cursor-pointer px-1 py-2 hover:text-purple-600 font-bold  ',
             collectionViewId === viewId ?
-              'text-fuchsia-600 text-shadow shadow-fuchsia-900 text-lg font-bold' : "text-zinc-500"
+              'text-purple-600  font-bold' : "text-zinc-500"
           )}
         >
           <CollectionViewColumnDesc

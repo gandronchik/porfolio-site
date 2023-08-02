@@ -9,9 +9,9 @@ import styles from './styles.module.css';
 export const FooterImpl: React.FC = () => {
 //bg-neutral-100
   return (
-    <footer data-aos="fade-up" style={{ backgroundImage: "radial-gradient(circle,rgba(16 18 27 / 30%), #27272a" }} className="bg-zinc-800 shadow-top flex-col md:flex-row shadow-zinc-900 w-full mr-auto flex items-center justify-around p-4">
-
-      <div className="flex flex-wrap items-center my-2">
+    <footer style={{ backgroundImage: "radial-gradient(circle,rgba(16 18 27 / 30%), #27272a" }} className="bg-zinc-800 shadow-top flex flex-col items-center w-full p-4">
+      <div className="max-w-[1100px] m-auto flex flex-col items-center">
+        <div className="flex flex-wrap items-center mx-auto my-2">
         {config.social.instagram && (
           <a
             className="mr-4"
@@ -56,8 +56,8 @@ export const FooterImpl: React.FC = () => {
         )}
       </div>
 
-      <div className="text-zinc-400 text-sm">Copyright © 2016-2023 {config.author}.</div>
-
+        <div className="text-center text-zinc-400 text-sm">Copyright © 2016-2023 {config.author}.</div>
+      </div>
 
     </footer>
   )

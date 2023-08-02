@@ -127,9 +127,6 @@ export const NotionBlockRenderer: React.FC<{
   const id = blockId || Object.keys(recordMap.block)[0]
   const block = recordMap.block[id]?.value
 
-  console.log('id', id);
-  console.log('block', block);
-
 
   if (!block) {
     if (process.env.NODE_ENV !== 'production') {
@@ -142,7 +139,6 @@ export const NotionBlockRenderer: React.FC<{
   return (
     <Block key={id} level={level} block={block} {...props}>
       {block?.content?.map((contentBlockId) => {
-        console.log(contentBlockId);
 
         return <NotionBlockRenderer
           key={contentBlockId}

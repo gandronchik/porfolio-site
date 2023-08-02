@@ -62,7 +62,7 @@
   --notion-item-purple: rgba(103, 36, 222, 0.2);
   --notion-item-gray: rgba(155, 154, 151, 0.4);
 
-  --notion-max-width: 720px;
+  --notion-max-width: 1100px;
   --notion-header-height: 45px;
 }
 
@@ -117,6 +117,17 @@
   color: var(--fg-color);
   caret-color: var(--fg-color);
   font-family: var(--notion-font);
+    flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      --notion-max-width: 900px;
+      --notion-header-height: 54px;
+      position: relative;
+      background: var(--bg-color);
+    }
+    
+    footer {
+      flex-shrink: 0;
 }
 
 .notion>* {
@@ -234,12 +245,9 @@
 }
 
 .notion-viewport {
-  position: relative;
-  padding: 0px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .medium-zoom-overlay {
@@ -264,14 +272,7 @@
   height: 100%;
 }
 
-.notion-page-scroller {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: center;
-  min-height: calc(100vh - var(--notion-header-height));
-}
+
 
 .notion-red,
 .notion-red_co {
@@ -508,20 +509,30 @@
   display: block;
   object-fit: cover;
   width: 100%;
-  height: 30vh !important;
-  min-height: 30vh !important;
-  max-height: 30vh !important;
+  height: 40vh !important;
+    max-height: 40vh !important;
+    min-height: 40vh !important;
   padding: 0;
 }
 
 .notion-page-cover-wrapper {
   width: 100%;
-  height: 30vh;
-  min-height: 30vh;
-  max-height: 30vh;
+  margin: auto;
+    max-width: 1100px;
+    height: auto;
   display: flex;
+
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  }
+  
+  .notion-page-cover-wrapper span,
+  .notion-page-cover-wrapper img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    margin-top: 50px;
 }
 
 .notion-collection-card-cover {
@@ -534,13 +545,7 @@
   max-height: 100% !important;
 }
 
-.notion-page-cover-wrapper span,
-.notion-page-cover-wrapper img {
-  width: 100% !important;
-  height: 30vh !important;
-  min-height: 30vh !important;
-  max-height: 30vh !important;
-}
+
 
 .notion-page {
   position: relative;
@@ -560,8 +565,7 @@
 }
 
 .notion-page-no-cover {
-  margin-top: 48px !important;
-  padding-top: 96px;
+  padding-top: 50px;
 }
 
 .notion-page-no-cover.notion-page-no-icon {

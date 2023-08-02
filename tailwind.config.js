@@ -6,7 +6,9 @@ module.exports = {
     'components/**/*.{jsx,tsx}',
     'pages/**/*.{jsx,tsx}',
   ],
+  darkMode: ['class', 'body[class="dark-mode"]'],
   theme: {
+
     extend: {
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',

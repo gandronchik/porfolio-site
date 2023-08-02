@@ -46,7 +46,8 @@ export default siteConfig({
   pageUrlOverrides: {
     '/statement': '16e8d9eef7584b9a935ccf676e4d7b8d',
     '/shop': 'fd2c12b843684506bc25bd15356728e3',
-    '/contacts': 'beca9c28b1544e89a3f8e32977398d35'
+    '/contacts': 'beca9c28b1544e89a3f8e32977398d35',
+    '/': 'fa60067fa95b481f90a22fc5828cdc92'
   },
 
   // whether to use the default notion navigation style or a custom one with links to
@@ -57,6 +58,10 @@ export default siteConfig({
     {
       title: 'Statement',
       pageId: '16e8d9eef7584b9a935ccf676e4d7b8d'
+    },
+    {
+      title: 'Portfolio',
+      pageId: 'fa60067fa95b481f90a22fc5828cdc92'
     },
     {
       title: 'Shop',

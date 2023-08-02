@@ -72,9 +72,6 @@ export const Block: React.FC<BlockProps> = (props) => {
 
   const [activeSection, setActiveSection] = React.useState(null)
 
-  console.log(recordMap);
-
-
   const {
     block,
     children,
@@ -150,42 +147,17 @@ export const Block: React.FC<BlockProps> = (props) => {
             showTableOfContents && toc.length >= minTableOfContentsItems
           const hasAside = (hasToc || pageAside) && !page_full_width
           const hasPageCover = pageCover || page_cover
-          // const isBlogPost = block?.type === 'page' && block?.parent_table === 'collection'
-          // let datePropertyId = null;
-          // let tagsPropertyId = null;
-          // let sourcePropertyId = null;
-          // let collectionId = null;
-          // let collection = null;
-          // if (isBlogPost) {
-          //   collectionId = block.parent_id
-          //   collection = recordMap.collection[collectionId]?.value
-          //   sourcePropertyId = collection.schema && Object.keys(collection.schema).find(
-          //     (key) => collection.schema[key]?.name?.toLowerCase() === "source"
-          //   )
-          //   datePropertyId = collection.schema && Object.keys(collection.schema).find(
-          //     (key) => collection.schema[key]?.name?.toLowerCase() === "post date"
-          //   )
-          //   tagsPropertyId = collection.schema && Object.keys(collection.schema).find(
-          //     (key) => collection.schema[key]?.name?.toLowerCase() === "tags"
-          //   )
-          // }
 
 
           return (
             <div
               className={cs(
                 'notion',
-                'notion-app',
-                darkMode ? 'dark-mode' : 'light-mode',
                 blockId,
                 className
               )}
             >
-              <div className='notion-viewport' />
 
-              <div className='notion-frame'>
-                {/* {!disableHeader && <components.Header block={block} />}
-                {header} */}
 
                 <div className='notion-page-scroller'>
                   {hasPageCover &&
@@ -220,44 +192,7 @@ export const Block: React.FC<BlockProps> = (props) => {
                       page_small_text && 'notion-small-text',
                       bodyClassName
                     )}
-                  >
-                    {/* {page_icon && (
-                      <PageIcon
-                        block={block}
-                        defaultIcon={defaultPageIcon}
-                        inline={false}
-                      />
-                    )}
-
-                    {pageHeader}
-                    <h1 className='notion-title'>
-                      {pageTitle ?? (
-                        <Text value={properties?.title} block={block} />
-                      )}
-                    </h1> */}
-
-                    {/* {(isBlogPost && tagsPropertyId && block.properties?.[tagsPropertyId]) &&
-                      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                        <Property
-                          schema={collection.schema[tagsPropertyId]}
-                          data={block.properties?.[tagsPropertyId]}
-                          propertyId={tagsPropertyId}
-                          block={block}
-                          collection={collection}
-                        />
-                      </div>
-                    }
-                    {(isBlogPost && datePropertyId && block.properties?.[datePropertyId]) &&
-                      <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "0.5em", opacity: 0.7 }} >
-                        <Property
-                          schema={collection.schema[datePropertyId]}
-                          data={block.properties?.[datePropertyId]}
-                          propertyId={datePropertyId}
-                          block={block}
-                          collection={collection}
-                        />
-                      </div>
-                    } */}
+                >
                     {(block.type === 'collection_view_page' ||
                       (block.type === 'page' && block.parent_table === 'collection')) && (
                         <Collection block={block} ctx={ctx} />
@@ -276,42 +211,9 @@ export const Block: React.FC<BlockProps> = (props) => {
                           {children}
                         </article>
 
-                        {/* {hasAside && (
-                          <PageAside
-                            toc={toc}
-                            activeSection={activeSection}
-                            setActiveSection={setActiveSection}
-                            hasToc={hasToc}
-                            hasAside={hasAside}
-                            pageAside={pageAside}
-                          />
-                        )} */}
                       </div>
-                    )}
-                    {/* {(isBlogPost && sourcePropertyId && block.properties?.[sourcePropertyId]) &&
-                      <div style={{paddingTop: "1em", paddingBottom: "1em", width: "100%", display:'flex', justifyContent: "end", paddingRight:"0.5em"}} >
-                        <span style={{ opacity: 0.7, marginRight: 5 }}>
-                       </span>
-                       &nbsp;
-                        <Property
-                          schema={collection.schema[sourcePropertyId]}
-                          // eslint-disable-next-line no-unsafe-optional-chaining
-                          data={[
-                            [
-                              block.properties?.[sourcePropertyId][0][0].match(/:\/\/(.[^/]+)/)[1],
-                                block.properties?.[sourcePropertyId][0][1]
-                            ]
-                        ]}
-                          propertyId={sourcePropertyId}
-                          block={block}
-                          collection={collection}
-                        />
-                      </div>}
-                    {pageFooter} */}
-                  </main>
-
-                  {/* {footer} */}
-                </div>
+                  )}
+                </main>
               </div>
             </div>
           )
@@ -320,8 +222,6 @@ export const Block: React.FC<BlockProps> = (props) => {
             <main
               className={cs(
                 'notion',
-                darkMode ? 'dark-mode' : 'light-mode',
-                'notion-page',
                 page_full_width && 'notion-full-width',
                 page_small_text && 'notion-small-text',
                 blockId,
@@ -329,9 +229,7 @@ export const Block: React.FC<BlockProps> = (props) => {
                 bodyClassName
               )}
             >
-              <div className='notion-viewport' />
 
-              {pageHeader}
 
               {(block.type === 'collection_view_page' ||
                 (block.type === 'page' &&
@@ -341,7 +239,7 @@ export const Block: React.FC<BlockProps> = (props) => {
 
               {block.type !== 'collection_view_page' && children}
 
-              {pageFooter}
+
             </main>
           )
         }
@@ -412,11 +310,11 @@ export const Block: React.FC<BlockProps> = (props) => {
       const innerHeader = (
         <span>
           <div id={id} className='notion-header-anchor' />
-          {!block.format?.toggleable && (
+          {/* {!block.format?.toggleable && (
             <a className='notion-hash-link' href={`#${id}`} title={title}>
               <LinkIcon />
             </a>
-          )}
+          )} */}
 
           <span className='notion-h-title'>
             <Text value={block.properties.title} block={block} />

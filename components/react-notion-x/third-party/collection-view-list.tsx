@@ -48,7 +48,7 @@ function List({ blockIds, collection, collectionView }) {
   return (
     <div className='notion-list-collection'>
       <div className='notion-list-view'>
-        <div className='notion-list-body'>
+        <div className='notion-list-body '>
           {blockIds?.map((blockId) => {
             const block = recordMap.block[blockId]?.value as PageBlock
             if (!block) return null
@@ -84,7 +84,7 @@ function List({ blockIds, collection, collectionView }) {
 
                       return (
                         <div
-                          className='notion-list-item-property'
+                          className='notion-list-item-property '
                           key={p.property}
                         >
                           <Property

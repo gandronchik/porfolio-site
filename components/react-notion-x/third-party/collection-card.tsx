@@ -7,6 +7,7 @@ import { cs } from '../utils'
 import { useNotionContext, dummyLink, NotionContextProvider } from '../context'
 import { LazyImage } from '../components/lazy-image'
 import { PageTitleImpl } from '../components/page-title'
+import { Text } from '../components/text'
 
 export const CollectionCard: React.FC<CollectionCardProps> = ({
   collection,
@@ -29,9 +30,6 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
 
   if (page_cover) {
     const coverPosition = (1 - page_cover_position) * 100
-
-    console.log(coverAspect);
-
 
     coverContent = (
       <LazyImage
@@ -64,22 +62,15 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
         href={mapPageUrl(block.id)}
         {...rest}
       >
-        <div className='break-words overflow-hidden text-ellipsis text-lg'>
-          {/* {console.log(collection.schema.title)} */}
-          <PageTitleImpl block={block} hideIcon={true} />
-          {/* <Property
-            schema={collection.schema.title}
-            data={block?.properties?.title}
-            block={block}
-            collection={collection}
-          /> */}
-        </div>
+
         {(coverContent || cover?.type !== 'none') && (
-          <div className='overflow-hidden relative  w-full h-56'>{coverContent}</div>
+          <div className='relative  w-full'>{coverContent}</div>
         )}
 
-        <div className='flex flex-col py-4 mt-2'>
-
+        <div className='flex flex-col py-4 mt-2 text-center'>
+          <div style={{ fontFamily: "fantasy", fontSize: "14px" }} className='break-words text-md text-center font-bold '>
+            <Text value={block.properties?.title} block={block} />
+          </div>
 
           {properties
             ?.filter(
