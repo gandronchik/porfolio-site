@@ -3,7 +3,7 @@ import { siteConfig } from './lib/site-config'
 export default siteConfig({
   // the site's root Notion page (required)
   // rootNotionPageId: '7875426197cf461698809def95960ebf',
-  rootNotionPageId: 'fa60067fa95b481f90a22fc5828cdc92',
+  rootNotionPageId: '65fec5b4a3c640d0bbc5e01e2e9daef5',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
@@ -44,10 +44,10 @@ export default siteConfig({
   // example:
   //
   pageUrlOverrides: {
-    '/statement': '16e8d9eef7584b9a935ccf676e4d7b8d',
-    '/shop': 'fd2c12b843684506bc25bd15356728e3',
-    '/contacts': 'beca9c28b1544e89a3f8e32977398d35',
-    '/': 'fa60067fa95b481f90a22fc5828cdc92'
+    '/statement': '8df73a9a04fe4653968568ca1d865fcf',
+    '/shop': '81f87e49cb3a46dabc7f6b0e50210a2c',
+    '/contacts': '7488c030502143648e0d501c1c8dae28',
+    '/': 'a3f2ddd94a1d4a59ad83ad12fc2c9a41'
   },
 
   // whether to use the default notion navigation style or a custom one with links to
@@ -57,19 +57,19 @@ export default siteConfig({
   navigationLinks: [
     {
       title: 'Statement',
-      pageId: '16e8d9eef7584b9a935ccf676e4d7b8d'
+      pageId: '8df73a9a04fe4653968568ca1d865fcf'
     },
     {
       title: 'Portfolio',
-      pageId: 'fa60067fa95b481f90a22fc5828cdc92'
+      pageId: 'a3f2ddd94a1d4a59ad83ad12fc2c9a41'
     },
     {
       title: 'Shop',
-      pageId: 'fd2c12b843684506bc25bd15356728e3'
+      pageId: '81f87e49cb3a46dabc7f6b0e50210a2c'
     },
     {
       title: 'Contacts',
-      pageId: 'beca9c28b1544e89a3f8e32977398d35'
+      pageId: '7488c030502143648e0d501c1c8dae28'
     }
   ]
 })
