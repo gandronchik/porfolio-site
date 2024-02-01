@@ -8,7 +8,7 @@ export const getStaticProps = async (context) => {
   const rawPageId = context.params.pageId as string
   try {
     const props = await resolveNotionPage(domain, rawPageId)
-   
+
     return { props, revalidate: 10 }
   } catch (err) {
     console.error('page error', domain, rawPageId, err)
@@ -36,11 +36,11 @@ export async function getStaticPaths() {
       }
     })),
     // paths: [],
-    fallback: true
+    fallback: "blocking"
   }
   return staticPaths
 }
 
-export default function NotionDomainDynamicPage(props) {  
+export default function NotionDomainDynamicPage(props) {
   return <NotionPage {...props} />
 }
