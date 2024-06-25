@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Logo({ width = 180, color = "var(--color-zinc-400)", opacity, className }) {
+export default function Logo({ width = 180, color = "var(--color-black)", opacity, className }) {
 	return (
 
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1082.21 186.17" width={width}

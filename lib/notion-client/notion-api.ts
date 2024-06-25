@@ -598,6 +598,8 @@ export class NotionAPI {
     // console.log(url,'endpoint' );
     // console.log(JSON.stringify(body),'endpoint' );
 
+    console.log(gotOptions)
+
     return got
       .post(url, {
         ...gotOptions,
