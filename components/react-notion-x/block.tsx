@@ -146,8 +146,8 @@ export const Block: React.FC<BlockProps> = (props) => {
           const hasToc =
             showTableOfContents && toc.length >= minTableOfContentsItems
           const hasAside = (hasToc || pageAside) && !page_full_width
-          const hasPageCover = pageCover || page_cover
-
+          // const hasPageCover = pageCover || page_cover
+          const hasPageCover = pageCover
 
           return (
             <div

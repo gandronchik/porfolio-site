@@ -58,7 +58,6 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
 
       <components.PageLink
         className="cursor-pointer flex flex-col overflow-hidden decoration"
-        data-aos="zoom-in-up"
         href={mapPageUrl(block.id)}
         {...rest}
       >
@@ -142,7 +141,7 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
 //       }
 //     })
 //     console.log(contentBlockId);
-    
+
 
 //     if (contentBlockId) {
 //       const contentBlock = recordMap.block[contentBlockId]?.value as ImageBlock
